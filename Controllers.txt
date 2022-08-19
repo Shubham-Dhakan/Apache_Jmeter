@@ -1,0 +1,56 @@
+* We will cover some important controllers which are used in Jmeter and why are used in Jmeter: 
+-----------------------------------------------------------------------------------------------> 
+
+1) Simple Controller: 
+--------------------> 
+This controller is mostly like container which stores all the 
+Sampler(requests)--> the HTTP'S and executes all the request at the time of execution
+in sequence.
+
+It can be used to execute group of specific request. 
+For eg: registration > login > Form Submission
+
+2) Test Fragment: 
+---------------->
+This contorller is same as Simple Controller (Alternative)
+Which can be utilized by the <<< Module Contorller >>>
+
+3) Module Controller:
+-------------------->
+Operation: This controller uses/utilizes << simple controller >> and its sampler(requests)
+before sending some other sampler(requests)
+
+For eg: We have 2 sample requests, one simple controller with 1 sample request
+
+so Module controller will use simple controller and its 1 sample request before executing those 
+2 sample requests in our thread group.
+
+4) Include Controller:
+----------------------->
+Will execute the scripts which are already existing.
+
+5) Radom Controller: 
+-----------------------> 
+For eg: we have 2 sampler(requests) 
+So at the time of execution it will only execute one request randomly at a time of total requests.  
+
+6) Random Ordder Controller: 
+-----------------------------> 
+It is like << simple Controller >> 
+This controller will execute all the sampler(request) of total requests. 
+But the order of execution will be random. 
+
+7) Interleave Controller: 
+------------------------------> 
+This controller behaves similarly as Random Controller, 
+executes one controller at a time.
+
+But MAINLY it follows sequential order. 
+In 1 loop it will execute first sampler (request)
+
+In 2 loop it will execite second sampler (request)
+
+8) Through Put Controller: 
+------------------------------> 
+Through this controller tester can divide load of on website by 
+creating several << throughput controllers >> under one thread group.   
